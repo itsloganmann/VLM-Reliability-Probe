@@ -1,0 +1,30 @@
+# LLaVA-1.5-7B configuration for VRP
+model:
+  name: llava
+  hf_id: llava-hf/llava-1.5-7b-hf
+  num_layers: 32
+  num_attention_heads: 32
+  hidden_size: 4096
+  visual_encoder: clip-vit-l-14
+  visual_tokens: 576        # 24×24 grid
+  hook_layer_start: 16      # layers 16–31 are instrumented (paper App. A.7)
+
+# Structural metrics
+structural:
+  dbscan_eps: 1.5
+  dbscan_min_samples: 3
+  top_percentile: 90        # keep top 10 % of activation mass
+
+# Self-consistency
+self_consistency:
+  k: 10
+  temperature: 0.7
+  top_p: 0.9
+
+# Hidden-state probe
+probe:
+  best_layer: 21            # paper §5.4: best probe layer for LLaVA
+  hidden_dim: 256
+  lr: 1.0e-4
+  epochs: 50
+  test_size: 0.2

@@ -1,0 +1,31 @@
+# Qwen2-VL-7B-Instruct configuration for VRP
+model:
+  name: qwen2vl
+  hf_id: Qwen/Qwen2-VL-7B-Instruct
+  num_layers: 28
+  num_attention_heads: 28
+  num_kv_heads: 4           # Grouped Query Attention
+  hidden_size: 3584
+  visual_encoder: native_multimodal
+  visual_tokens: dynamic    # dynamic resolution; varies per input
+  hook_layer_start: 0
+
+# Structural metrics
+structural:
+  dbscan_eps: 1.5
+  dbscan_min_samples: 3
+  top_percentile: 90
+
+# Self-consistency
+self_consistency:
+  k: 10
+  temperature: 0.7
+  top_p: 0.9
+
+# Hidden-state probe
+probe:
+  best_layer: 18            # paper §5.4: best probe layer for Qwen2-VL (L18)
+  hidden_dim: 256
+  lr: 1.0e-4
+  epochs: 50
+  test_size: 0.2

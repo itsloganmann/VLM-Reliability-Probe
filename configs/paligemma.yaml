@@ -1,0 +1,30 @@
+# PaliGemma-3B configuration for VRP
+model:
+  name: paligemma
+  hf_id: google/paligemma-3b-pt-224
+  num_layers: 18
+  num_attention_heads: 8
+  hidden_size: 2048
+  visual_encoder: siglip
+  visual_tokens: 256        # 16×16 grid (224px / 14px patch)
+  hook_layer_start: 0       # instrument all layers (shallow model)
+
+# Structural metrics
+structural:
+  dbscan_eps: 1.5
+  dbscan_min_samples: 3
+  top_percentile: 90
+
+# Self-consistency
+self_consistency:
+  k: 10
+  temperature: 0.7
+  top_p: 0.9
+
+# Hidden-state probe
+probe:
+  best_layer: 10            # paper §5.4: best probe layer for PaliGemma (L10)
+  hidden_dim: 256
+  lr: 1.0e-4
+  epochs: 50
+  test_size: 0.2
