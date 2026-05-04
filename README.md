@@ -1,8 +1,7 @@
 # VLM Reliability Probe (VRP)
 
 > **Visuals Lie, Consistency Speaks: Disentangling Spatial Attention from Reliability in Vision-Language Models**
->
-> Anonymous Authors — Paper under double-blind review
+
 
 ---
 
