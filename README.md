@@ -2,6 +2,13 @@
 
 > **Visuals Lie, Consistency Speaks: Disentangling Spatial Attention from Reliability in Vision-Language Models**
 
+**Papers**
+
+- Visuals Lie, Consistency Speaks: Disentangling Spatial Attention from Reliability in Vision-Language Models. ICLR 2026 Workshop on Multimodal Intelligence. [OpenReview](https://openreview.net/forum?id=fyDhQ2dKdw)
+- Where Reliability Lives in Vision-Language Models: A Mechanistic Study of Attention, Hidden States, and Causal Circuits. ICML 2026 Mechanistic Interpretability Workshop. [arXiv](https://arxiv.org/abs/2605.08200)
+
+Author: Logan Mann, UC Santa Barbara. Contact: github.com/itsloganmann
+
 
 ---
 
@@ -143,7 +150,7 @@ See [`data/README.md`](data/README.md) for download instructions.
 |---|---|---|
 | Truth Margin | `ΔM_l` | Logit difference (correct token − top incorrect) at layer *l* |
 | Token Confidence | `P_tok` | Mean log-probability of generated answer tokens |
-| Hidden-State Probe | — | 2-layer MLP trained on `h_last` to predict binary correctness |
+| Hidden-State Probe | - | 2-layer MLP trained on `h_last` to predict binary correctness |
 
 ### Behavioral (Stage 3)
 
@@ -189,12 +196,22 @@ done
 ## Citation
 
 ```bibtex
-@article{vrp2025,
-  title   = {Visuals Lie, Consistency Speaks: Disentangling Spatial Attention
-             from Reliability in Vision-Language Models},
-  author  = {Anonymous},
-  year    = {2025},
-  note    = {Under double-blind review}
+@inproceedings{mann2026visualslie,
+  title     = {Visuals Lie, Consistency Speaks: Disentangling Spatial Attention
+               from Reliability in Vision-Language Models},
+  author    = {Mann, Logan},
+  booktitle = {ICLR 2026 Workshop on Multimodal Intelligence},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=fyDhQ2dKdw}
+}
+
+@inproceedings{mann2026wherereliability,
+  title     = {Where Reliability Lives in Vision-Language Models: A Mechanistic
+               Study of Attention, Hidden States, and Causal Circuits},
+  author    = {Mann, Logan},
+  booktitle = {ICML 2026 Mechanistic Interpretability Workshop},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2605.08200}
 }
 ```
 
